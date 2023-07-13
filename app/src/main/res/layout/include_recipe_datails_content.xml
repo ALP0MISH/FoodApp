@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@drawable/recipe_details_roundet_background">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="35dp"
+        android:layout_height="wrap_content">
+
+
+        <TextView
+            android:id="@+id/recipe_title_text_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="22sp"
+            android:layout_marginStart="30dp"
+            android:layout_weight="1"
+            android:textStyle="bold"
+            android:requiresFadingEdge="horizontal"
+            android:fadingEdgeLength="25dp"
+            android:ellipsize="none"
+            android:singleLine="true"
+            tools:text="@tools:sample/lorem/random"
+            android:fontFamily="@font/inter_semibold"/>
+
+        <ImageView
+            android:layout_width="18dp"
+            android:layout_height="23dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="51dp"
+            android:src="@drawable/saved_icon"/>
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/recipe_description_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter_light"
+        tools:text="@tools:sample/lorem/random"
+        android:maxLines="12"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="30dp"
+        android:ellipsize="end"
+        android:textSize="16dp"
+        android:layout_marginEnd="58dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="34dp"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/ingredient_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:layout_marginStart="28dp"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/inter_semibold"
+            android:text="@string/ingredients"/>
+
+        <TextView
+            android:id="@+id/ingredient_count_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:layout_gravity="center_vertical"
+            android:fontFamily="@font/inter_bold"
+            android:textColor="@color/green"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            tools:text="(12)"/>
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/ingredient_recycle_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="15dp"
+        android:clipToPadding="false"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/item_ingredient"/>
+
+</LinearLayout>

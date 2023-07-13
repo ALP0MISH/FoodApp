@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav_graph"
+    app:startDestination="@id/fragmentOnboarding">
+
+    <fragment
+        android:id="@+id/fragmentOnboarding"
+        android:name="com.example.foodapp.presentation.onboarding_screen.FragmentOnboarding"
+        android:label="fragment_onboarding"
+        tools:layout="@layout/fragment_onboarding" >
+        <action
+            android:id="@+id/action_fragmentOnboarding_to_fragmentMain"
+            app:destination="@id/fragmentMain" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentMain"
+        android:name="com.example.foodapp.presentation.main_screen.FragmentMain"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_fragmentMain_to_fragmentRecipeDitails"
+            app:destination="@id/fragmentRecipeDitails" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentRecipeDitails"
+        android:name="com.example.foodapp.presentation.recipe_screen.FragmentRecipeDetails"
+        android:label="fragment_recipe_ditails"
+        tools:layout="@layout/fragment_recipe_ditails" >
+        <argument
+            android:name="resipe"
+            app:argType="com.example.foodapp.domain.models.Recipe" />
+    </fragment>
+</navigation>
